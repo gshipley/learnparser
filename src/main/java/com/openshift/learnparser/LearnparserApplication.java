@@ -4,8 +4,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.json.simple.*;
 import org.json.simple.parser.*;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
 import java.io.FileReader;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -15,8 +13,6 @@ import static java.lang.System.*;
 
 @SpringBootApplication
 public class LearnparserApplication {
-    @Autowired
-    private static Environment environment;
 
     public static void main(String[] args) {
         SpringApplication.run(LearnparserApplication.class, args);
@@ -36,9 +32,6 @@ public class LearnparserApplication {
                     String key = (String) scenario.get("scenario_id");
                     Integer current = new Integer((String)scenario.get("started"));
                     Integer newvalue = (scenarios.get(key)) + current;
-
-
-
                     scenarios.put(key, newvalue );
                 } else {
                     String key = (String) scenario.get("scenario_id");
